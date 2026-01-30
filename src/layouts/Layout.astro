@@ -47,8 +47,7 @@ const ogImage = image.startsWith("http") ? image : `${siteConfig.url}${image}`;
       href="/image-sitemap.xml"
     />
 
-    <!-- Font: Doto -->
-    <Font cssVariable="--font-doto" preload />
+    <Font cssVariable="--font-main" preload />
 
     <!-- Open Graph -->
     <meta property="og:locale" content={lang} />
@@ -93,10 +92,10 @@ const ogImage = image.startsWith("http") ? image : `${siteConfig.url}${image}`;
     <slot name="head" />
   </head>
 
-  <body class="space-y-4">
+  <body class="space-y-4 sm:max-w-2xl mx-auto">
     <Navbar />
 
-    <main id="content" class="space-y-4 sm:max-w-2xl">
+    <main id="content" class="space-y-4">
       <slot />
     </main>
 

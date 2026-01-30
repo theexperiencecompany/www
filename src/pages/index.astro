@@ -26,17 +26,17 @@ const projects = [
     category: "Artificial Intelligence",
   },
   {
-    name: "Smart Wearables",
+    name: "",
     url: null,
     description: "next-gen wearables",
-    status: "Coming soon",
+    status: "upcoming",
     category: "Wearable Technology",
   },
   {
-    name: "Household Robotics",
+    name: "",
     url: null,
     description: "Household robotics",
-    status: "Coming soon",
+    status: "upcoming",
     category: "Robotics",
   },
 ];
@@ -260,7 +260,7 @@ const faqSchema = {
     <meta itemprop="description" content={meta.description} />
 
     <section
-      class="space-y-4 text-justify"
+      class="space-y-7 text-justify"
       itemscope
       itemtype="https://schema.org/Organization"
     >
@@ -268,24 +268,20 @@ const faqSchema = {
       <meta itemprop="url" content={siteConfig.url} />
       <link itemprop="logo" href={`${siteConfig.url}/logo.svg`} />
 
-      <h1 class="font-light leading-relaxed" itemprop="slogan">
+      <h1 class="font-light leading-relaxed text-xl" itemprop="slogan">
         We're a bunch of hackers, engineers, and designers obsessed and
         passionate about building things that actually make an impact.
       </h1>
 
-      <p
-        class="font-light text-base text-zinc-300 leading-relaxed"
-        itemprop="description"
-      >
+      <p class="font-light leading-relaxed text-xl" itemprop="description">
         Everything we make is designed with care, attention to detail, and a
-        focus and dedication to improving everyday lives through innovative
-        technology solutions.
+        focus on improving everyday lives through innovative technology.
       </p>
 
-      <p class="font-light text-base text-zinc-300 leading-relaxed">
+      <p class="font-light leading-relaxed text-xl">
         We believe in making an impact and creating a better <span
           class="font-bold! text-white">experience</span
-        > for humanity through cutting-edge AI, wearable technology, and robotics.
+        > for humanity through the products we build.
       </p>
     </section>
 
@@ -294,8 +290,12 @@ const faqSchema = {
       itemscope
       itemtype="https://schema.org/ItemList"
     >
-      <h2 id="projects-heading" class="font-light! mb-4" itemprop="name">
-        Our current and future projects:
+      <h2
+        id="projects-heading"
+        class="font-light! mb-4 text-xl"
+        itemprop="name"
+      >
+        What we're working on, and are interested in working on in the future:
       </h2>
 
       <div class="grid gap-4 grid-cols-1 sm:grid-cols-3" role="list">
@@ -348,7 +348,7 @@ const faqSchema = {
                     class="text-xs group-hover:underline text-right flex items-center gap-1 w-full justify-end"
                     aria-label="Learn more"
                   >
-                    <span>view more</span>
+                    <span>view</span>
                     <ArrowRight size={13} aria-hidden="true" />
                   </div>
                 </a>
@@ -394,7 +394,7 @@ const faqSchema = {
     <section aria-label="Inspiration">
       <blockquote
         cite="https://en.wikipedia.org/wiki/Steve_Jobs"
-        class="font-light italic text-sm text-zinc-400"
+        class="font-light italic text-zinc-400 pt-5"
         itemscope
         itemtype="https://schema.org/Quotation"
       >

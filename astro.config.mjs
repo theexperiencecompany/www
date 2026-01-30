@@ -16,7 +16,7 @@ export default defineConfig({
       {
         provider: fontProviders.google(),
         name: "Doto",
-        cssVariable: "--font-doto",
+        cssVariable: "--font-main",
         weights: [400, 700],
         styles: ["normal"],
         subsets: ["latin"],

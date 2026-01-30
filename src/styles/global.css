@@ -2,7 +2,7 @@
 
 * {
   letter-spacing: var(--tracking-tight);
-  font-family: var(--font-doto, sans-serif);
+  font-family: var(--font-main, sans-serif);
 }
 
 ::selection {
