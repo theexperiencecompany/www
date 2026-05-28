@@ -88,6 +88,14 @@ const ogImage = image.startsWith("http") ? image : `${siteConfig.url}${image}`;
       )
     }
 
+    <!-- Rybbit Analytics (self-hosted at as.heygaia.io) -->
+    <script
+      is:inline
+      src="https://as.heygaia.io/api/script.js"
+      data-site-id="6eaf4c2940fb"
+      defer
+    ></script>
+
     <!-- Head slot for page-specific additions -->
     <slot name="head" />
   </head>
