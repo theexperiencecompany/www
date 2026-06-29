@@ -1,0 +1,25 @@
+(docs/plans/2026-06-02-experience-site-revamp-design.md)
+
+---
+
+i would like to understand more about the layout of the website how it would be
+
+---
+
+nah it's okay. i just wanna know how to have a good balance between quality of detail and outlines in the wireframe images? and is there any way to have animated images?
+
+---
+
+review wtf you're saying
+
+---
+
+nvm let's not do the animation shit. let's first start with building out the layout in a simple html
+
+---
+
+what else can we do tho to be really clean shit tho? like nice details like the bordered theme is good but like what cool other shit can we do
+
+---
+
+i like every single one of these. i dont want the prototype now. let's actually build it out perfectly
