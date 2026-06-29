@@ -1,0 +1,60 @@
+---
+import Section from "../ui/Section.astro";
+import ImageFrame from "../ui/ImageFrame.astro";
+import Redacted from "../ui/Redacted.astro";
+
+const specs = [
+  { k: "display", v: "visible only to you" },
+  { k: "voice", v: '"hey gaia"' },
+  { k: "navigation", v: "painted on the road, live" },
+  { k: "memory", v: "auto-captures what matters" },
+  { k: "control", v: "voice · eyes · blink · hands" },
+  { k: "audio", v: "bone conduction" },
+  { k: "lenses", v: "clear → sunglasses, one press" },
+  { k: "power", v: "solar across the frame" },
+  { k: "build", v: "light, affordable, not ugly" },
+];
+---
+
+<Section index="02">
+  <div class="label">
+    <span class="name">smart glasses</span>
+    <span class="status">in development</span>
+  </div>
+
+  <ImageFrame
+    label="smart glasses blueprint"
+    caption="fig. 01 — front elevation"
+    size="wide"
+  />
+
+  <p class="lead" style="margin-top:34px">
+    GAIA, on your face. A display only you can see, a camera that sees what you
+    see, and an assistant you just talk to. It paints your directions onto the
+    road ahead, picks up the call you don't want to take, and remembers the
+    things you'd have forgotten by dinner. You run it with your voice, your
+    eyes, and your hands — no controller, no phone in your palm.
+  </p>
+  <p class="prose" style="margin-top:18px">
+    Most smart glasses are bricks you'd never wear in public. These are meant to
+    be light, cheap, and good-looking enough that you forget they're smart at
+    all.
+  </p>
+
+  <div class="specs">
+    {
+      specs.map((s) => (
+        <div class="spec">
+          <span class="k">{s.k}</span>
+          <span class="dots" />
+          <span class="v">{s.v}</span>
+        </div>
+      ))
+    }
+    <div class="spec">
+      <span class="k">field of view</span>
+      <span class="dots"></span>
+      <span class="v"><Redacted text="classified" /></span>
+    </div>
+  </div>
+</Section>

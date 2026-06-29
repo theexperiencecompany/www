@@ -1,0 +1,35 @@
+---
+interface Props {
+  /** drop in a real image path (e.g. /glasses.webp) to replace the placeholder */
+  src?: string;
+  alt?: string;
+  /** placeholder label shown until a real image exists */
+  label: string;
+  /** small blueprint caption under the frame, e.g. "fig. 01 — smart glasses" */
+  caption?: string;
+  size?: "wide" | "tall";
+  class?: string;
+}
+
+const {
+  src,
+  alt = "",
+  label,
+  caption,
+  size = "tall",
+  class: cls = "",
+} = Astro.props as Props;
+---
+
+<figure class:list={["frame-fig", cls]}>
+  <div class:list={["box", size]}>
+    {
+      src ? (
+        <img src={src} alt={alt} loading="lazy" decoding="async" />
+      ) : (
+        <span>[ {label} ]</span>
+      )
+    }
+  </div>
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>

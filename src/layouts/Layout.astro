@@ -30,7 +30,7 @@ const twitterCard = siteConfig.twitterCard;
 const ogImage = image.startsWith("http") ? image : `${siteConfig.url}${image}`;
 ---
 
-<html lang={lang} class="bg-black text-white sm:p-10 p-5">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -48,6 +48,7 @@ const ogImage = image.startsWith("http") ? image : `${siteConfig.url}${image}`;
     />
 
     <Font cssVariable="--font-main" preload />
+    <Font cssVariable="--font-body" preload />
 
     <!-- Open Graph -->
     <meta property="og:locale" content={lang} />
@@ -92,13 +93,34 @@ const ogImage = image.startsWith("http") ? image : `${siteConfig.url}${image}`;
     <slot name="head" />
   </head>
 
-  <body class="space-y-4 sm:max-w-2xl mx-auto">
-    <Navbar />
+  <body>
+    <div class="frame">
+      <Navbar />
 
-    <main id="content" class="space-y-4">
-      <slot />
-    </main>
+      <main id="content">
+        <slot />
+      </main>
 
-    <Footer />
+      <Footer />
+    </div>
+
+    <!-- fixed atmosphere overlays -->
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="cropmarks" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- a small note for anyone who opens the console -->
+    <script is:inline>
+      console.log(
+        "%c the experience company ",
+        "background:#fff;color:#000;font-weight:700;padding:2px 6px;",
+      );
+      console.log(
+        "%cwe build technology that makes people more capable.\nyou found the console. we like people who look under the hood.\nif you build things — talk to us → hi@heygaia.io",
+        "color:#71717a;font-family:monospace;line-height:1.6",
+      );
+    </script>
   </body>
 </html>

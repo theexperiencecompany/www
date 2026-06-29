@@ -1,0 +1,37 @@
+---
+import Section from "../ui/Section.astro";
+import { siteConfig } from "../../config/site";
+
+const twitter = siteConfig.social.twitter?.replace("@", "");
+---
+
+<Section index="06">
+  <blockquote cite="https://en.wikipedia.org/wiki/Steve_Jobs">
+    "The people who are crazy enough to think they can change the world are the
+    ones who do."
+    <cite>— Steve Jobs</cite>
+  </blockquote>
+
+  <div class="contact">
+    <p class="prose">If you want to help build this, we'd love to meet you.</p>
+    <div class="links">
+      <a class="link-bracket" href={`mailto:${siteConfig.social.email}`}>email</a>
+      <a
+        class="link-bracket"
+        href={`https://github.com/${siteConfig.social.github}`}
+        target="_blank"
+        rel="noopener"
+      >
+        github
+      </a>
+      <a
+        class="link-bracket"
+        href={`https://twitter.com/${twitter}`}
+        target="_blank"
+        rel="noopener"
+      >
+        x
+      </a>
+    </div>
+  </div>
+</Section>

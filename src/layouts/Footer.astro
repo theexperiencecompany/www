@@ -1,60 +1,16 @@
 ---
-import Evolution from "../components/Evolution.astro";
-import { siteConfig } from "../config/site";
-
 const currentYear = new Date().getFullYear();
-
-const socialLinks = [
-  {
-    name: "Twitter",
-    url: siteConfig.social.twitter
-      ? `https://twitter.com/${siteConfig.social.twitter.replace("@", "")}`
-      : null,
-    enabled: !!siteConfig.social.twitter,
-    external: true,
-  },
-  {
-    name: "GitHub",
-    url: siteConfig.social.github
-      ? `https://github.com/${siteConfig.social.github}`
-      : null,
-    enabled: !!siteConfig.social.github,
-    external: true,
-  },
-  {
-    name: "Email",
-    url: siteConfig.social.email ? `mailto:${siteConfig.social.email}` : null,
-    enabled: !!siteConfig.social.email,
-    external: false,
-  },
-].filter((link) => link.enabled);
+const version = "v0.1.0";
 ---
 
-<footer class="text-sm space-y-2 relative" role="contentinfo">
-  <nav
-    class="lowercase flex flex-wrap gap-3 text-zinc-300"
-    aria-label="Social links"
-  >
-    {
-      socialLinks.map((link) => (
-        <a
-          href={link.url}
-          target={link.external ? "_blank" : undefined}
-          rel={link.external ? "noopener noreferrer" : undefined}
-          class="hover:outline hover:outline-zinc-500 hover:outline-dashed bg-black flex justify-center w-fit p-1 underline hover:no-underline"
-        >
-          {link.name}
-        </a>
-      ))
-    }
-  </nav>
+<footer class="footer" role="contentinfo">
+  <div class="braille" aria-hidden="true">
+⠀⠀⢀⣠⣴⣶⣿⣿⣷⣶⣦⣄⡀⠀⠀⠀⠀⢀⣠⣶⣿⣿⣿⣶⣄⡀⠀⠀⠀⠀⣀⣴⣾⣿⣿⣿⣷⣦⣀⠀⠀⠀⢀⣠⣴⣾⣿⣿⣷⣦⣄⡀⠀⠀⠀⣠⣶⣿⣿⣿⣿⣿⣷⣦⡀
+⠀⢠⣾⣿⣿⠿⠛⠛⠿⣿⣿⣷⡄⠀⠀⢠⣾⣿⡿⠟⠛⠿⣿⣷⡄⠀⠀⢠⣾⣿⡿⠛⠛⠿⣿⣷⡄⠀⢠⣾⣿⡿⠛⠛⢿⣿⣷⡄⠀⢀⣾⣿⡿⠛⠛⢿⣿⣷⡀
+  </div>
 
-  <slot />
-
-  <p class="text-zinc-400">
-    Copyright © {currentYear}
-    {siteConfig.name}. All rights reserved.
-  </p>
-
-  <!-- <img src="/evolution.webp" class="sm:w-[35%] py-4 w-full" alt="Evolution" /> -->
+  <div class="foot-row">
+    <span class="version">{version} · the experience company</span>
+    <span class="copyright">© {currentYear} all rights reserved.</span>
+  </div>
 </footer>

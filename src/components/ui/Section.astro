@@ -1,0 +1,14 @@
+---
+interface Props {
+  index?: string;
+  id?: string;
+  class?: string;
+}
+
+const { index, id, class: cls = "" } = Astro.props as Props;
+---
+
+<section id={id} class:list={["section", cls]}>
+  {index && <span class="sec-index" aria-hidden="true">{index}</span>}
+  <slot />
+</section>

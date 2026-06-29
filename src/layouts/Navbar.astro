@@ -1,18 +1,11 @@
 ---
-import { Image } from "astro:assets";
 import { siteConfig } from "../config/site";
 ---
 
-<header role="banner" class="mb-8">
-  <nav aria-label="Primary navigation">
-    <a href="/" class="underline" title="Return to homepage">
-      <Image
-        src={siteConfig.logo}
-        alt={`${siteConfig.name} logo`}
-        width={60}
-        height={60}
-        class="inline-block align-middle"
-      />
-    </a>
-  </nav>
+<header role="banner" class="topbar">
+  <a href="/" class="brand" title="Return to homepage">
+    <img src={siteConfig.logo} alt={`${siteConfig.name} logo`} width="20" height="20" />
+    <span>the experience company</span>
+  </a>
+  <span class="meta">est. 2023</span>
 </header>
