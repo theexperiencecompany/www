@@ -23,3 +23,7 @@ what else can we do tho to be really clean shit tho? like nice details like the 
 ---
 
 i like every single one of these. i dont want the prototype now. let's actually build it out perfectly
+
+---
+
+delete the prototype. open a pr.
