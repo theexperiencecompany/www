@@ -1,0 +1,16 @@
+/* TEAM */
+
+  the experience company
+  hackers · engineers · designers
+
+/* WHAT WE'RE BUILDING */
+
+  gaia ............... personal AI assistant — live → heygaia.io
+  smart glasses ...... in development
+  household robotics . on the horizon
+
+/* SAY HI */
+
+  hi@heygaia.io
+
+  the screen was just where we started.

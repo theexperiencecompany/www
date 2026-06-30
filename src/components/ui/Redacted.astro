@@ -1,0 +1,11 @@
+---
+interface Props {
+  /** text to hide behind the bar; also the screen-reader value */
+  children?: never;
+  text?: string;
+}
+
+const { text = "classified" } = Astro.props as Props;
+---
+
+<span class="redacted" title="classified">{text}</span>

@@ -1,9 +1,14 @@
 ---
 // src/pages/index.astro
-import { Image } from "astro:assets";
-import { ArrowRight } from "lucide-react";
 import { siteConfig } from "../config/site";
 import Layout from "../layouts/Layout.astro";
+import Hero from "../components/sections/Hero.astro";
+import Manifesto from "../components/sections/Manifesto.astro";
+import SmartGlasses from "../components/sections/SmartGlasses.astro";
+import Gaia from "../components/sections/Gaia.astro";
+import Robotics from "../components/sections/Robotics.astro";
+import Connection from "../components/sections/Connection.astro";
+import Close from "../components/sections/Close.astro";
 
 const canonicalURL = new URL(Astro.url.pathname, siteConfig.url).href;
 
@@ -15,31 +20,6 @@ const meta = {
   url: canonicalURL,
   canonical: canonicalURL,
 };
-
-const projects = [
-  {
-    logo: "/gaia.webp",
-    name: "GAIA",
-    url: "https://heygaia.io",
-    description: "Personal AI assistant",
-    status: "Live",
-    category: "Artificial Intelligence",
-  },
-  {
-    name: "",
-    url: null,
-    description: "next-gen wearables",
-    status: "upcoming",
-    category: "Wearable Technology",
-  },
-  {
-    name: "",
-    url: null,
-    description: "Household robotics",
-    status: "upcoming",
-    category: "Robotics",
-  },
-];
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -255,157 +235,11 @@ const faqSchema = {
     />
   </fragment>
 
-  <article class="space-y-4" itemscope itemtype="https://schema.org/WebPage">
-    <meta itemprop="name" content={meta.title} />
-    <meta itemprop="description" content={meta.description} />
-
-    <section
-      class="space-y-7 text-justify"
-      itemscope
-      itemtype="https://schema.org/Organization"
-    >
-      <meta itemprop="name" content={siteConfig.name} />
-      <meta itemprop="url" content={siteConfig.url} />
-      <link itemprop="logo" href={`${siteConfig.url}/logo.svg`} />
-
-      <h1 class="font-light leading-relaxed text-xl" itemprop="slogan">
-        We're a bunch of hackers, engineers, and designers obsessed and
-        passionate about building things that actually make an impact.
-      </h1>
-
-      <p class="font-light leading-relaxed text-xl" itemprop="description">
-        Everything we make is designed with care, attention to detail, and a
-        focus on improving everyday lives through innovative technology.
-      </p>
-
-      <p class="font-light leading-relaxed text-xl">
-        We believe in making an impact and creating a better <span
-          class="font-bold! text-white">experience</span
-        > for humanity through the products we build.
-      </p>
-    </section>
-
-    <section
-      aria-labelledby="projects-heading"
-      itemscope
-      itemtype="https://schema.org/ItemList"
-    >
-      <h2
-        id="projects-heading"
-        class="font-light! mb-4 text-xl"
-        itemprop="name"
-      >
-        What we're working on, and are interested in working on in the future:
-      </h2>
-
-      <div class="grid gap-4 grid-cols-1 sm:grid-cols-3" role="list">
-        {
-          projects.map((project, index) => (
-            <div
-              class="p-3 border border-dashed border-zinc-700 hover:bg-zinc-900 transition-colors flex flex-col gap-1"
-              itemscope
-              itemtype={
-                project.url
-                  ? "https://schema.org/SoftwareApplication"
-                  : "https://schema.org/Product"
-              }
-              itemprop="itemListElement"
-              role="listitem"
-            >
-              {project.url ? (
-                <a
-                  href={project.url}
-                  class="group flex flex-col h-full gap-1 no-underline hover:text-white"
-                  aria-label={`Learn more about ${project.name} - ${project.description}`}
-                  itemprop="url"
-                  rel="noopener"
-                  target="_blank"
-                >
-                  {project.logo ? (
-                    <>
-                      <Image
-                        src={project.logo}
-                        alt={`${project.name} logo - ${project.description}`}
-                        width={50}
-                        height={50}
-                        class="object-contain w-full max-w-20"
-                        loading="eager"
-                        itemprop="image"
-                      />
-                    </>
-                  ) : (
-                    <h3 class="text-base font-semibold" itemprop="name">
-                      {project.name}
-                    </h3>
-                  )}
-                  <p
-                    class="text-sm font-light text-zinc-400 lowercase"
-                    itemprop="description"
-                  >
-                    {project.description}
-                  </p>
-                  <div
-                    class="text-xs group-hover:underline text-right flex items-center gap-1 w-full justify-end"
-                    aria-label="Learn more"
-                  >
-                    <span>view</span>
-                    <ArrowRight size={13} aria-hidden="true" />
-                  </div>
-                </a>
-              ) : (
-                <>
-                  {project.logo ? (
-                    <>
-                      <Image
-                        src={project.logo}
-                        alt={`${project.name} logo - Coming soon`}
-                        width={400}
-                        height={100}
-                        class="object-contain w-full"
-                        loading="lazy"
-                        itemprop="image"
-                      />
-                    </>
-                  ) : (
-                    <h3 class="text-base font-semibold blur-sm" itemprop="name">
-                      {project.name}
-                    </h3>
-                  )}
-                  <p
-                    class="text-sm font-light text-zinc-400 flex-1 lowercase"
-                    itemprop="description"
-                  >
-                    {project.description}
-                  </p>
-                  <span
-                    class="text-xs text-right text-zinc-400 mt-auto lowercase"
-                    aria-label={`Status: ${project.status}`}
-                  >
-                    {project.status}
-                  </span>
-                </>
-              )}
-            </div>
-          ))
-        }
-      </div>
-    </section>
-
-    <section aria-label="Inspiration">
-      <blockquote
-        cite="https://en.wikipedia.org/wiki/Steve_Jobs"
-        class="font-light italic text-zinc-400 pt-5"
-        itemscope
-        itemtype="https://schema.org/Quotation"
-      >
-        <p itemprop="text">
-          "The people who are crazy enough to think they can change the world
-          are the ones who do."
-        </p>
-        <cite itemprop="creator" itemscope itemtype="https://schema.org/Person">
-          — <span itemprop="name">Steve Jobs</span>
-        </cite>
-      </blockquote>
-    </section>
-  </article>
+  <Hero />
+  <Manifesto />
+  <Gaia />
+  <SmartGlasses />
+  <Robotics />
+  <Connection />
+  <Close />
 </Layout>
