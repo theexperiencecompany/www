@@ -4,25 +4,26 @@ import ImageFrame from "../ui/ImageFrame.astro";
 ---
 
 <Section index="01">
-  <div class="row center">
-    <div class="cell">
-      <p class="prose">
-        We're a small team of hackers, engineers, and designers. We build the
-        things we wish existed.
-      </p>
-      <p class="prose">
-        We think the best technology gives you more and asks for less — more
-        time, more attention, more room to be human — and then gets out of the
-        way. Most technology today does the opposite. We're building the other
-        kind.
-      </p>
-      <p class="prose">
-        Everything worth building looks impossible right up until someone builds
-        it. That's the part we like.
-      </p>
-    </div>
-    <div class="cell media">
-      <ImageFrame label="human → machine" caption="fig. 00 — the extension" />
-    </div>
+  <p class="lead">
+    We're a small team of hackers, engineers, and designers. We build the things
+    we wish existed.
+  </p>
+  <p class="prose">
+    We think the best technology gives you more and asks for less — more time,
+    more attention, more room to be human — and then gets out of the way. Most
+    technology today does the opposite. We're building the other kind.
+  </p>
+  <p class="prose">
+    Everything worth building looks impossible right up until someone builds it.
+    That's the part we like.
+  </p>
+
+  <div class="media-block" style="margin-top: 44px">
+    <ImageFrame
+      src="/img/figure.webp"
+      alt="human becoming machine"
+      label="human → machine"
+      caption="fig. 00 — the human"
+    />
   </div>
 </Section>

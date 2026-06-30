@@ -22,7 +22,7 @@ const {
 ---
 
 <figure class:list={["frame-fig", cls]}>
-  <div class:list={["box", size]}>
+  <div class:list={["box", size, src && "has-img"]}>
     {
       src ? (
         <img src={src} alt={alt} loading="lazy" decoding="async" />
